@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link href="css/style.min.css" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/5fc6f4fd75e944a52a342ab2c7f100f1?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="fonts/Montserrat-Regular.woff2" as="font" rel="preload">
+    <link href="fonts/Montserrat-Regular.woff" as="font" rel="preload">
+    <link href="fonts/Montserrat-Bold.woff2" as="font" rel="preload">
+    <link href="fonts/Montserrat-Bold.woff" as="font" rel="preload">
   </head>
   <body class="body">
     <header>
       <div class="head__wrap wrap">
+        <a class="visually-hidden" href="#" id="head"></a>
         <nav class="head__nav">
           <ul class="head__list">
             <li class="head__item head__item--logo">
@@ -26,11 +30,12 @@
               <span class="head__span head__span--logo">Доставка по всей России</span>
             </li>
             <li class="head__item head__item--phone">
-              <a class="head__link head__link--phone" href="tel:8800 000-00-00">8800 000-00-00</a>
+              <a class="head__link head__link--phone" href="tel:8800-000-00-00">8800 000-00-00</a>
               <span class="head__span head__span--phone">Звонок бесплатный</span>
             </li>
           </ul>
         </nav>
+        <a class="head__btn" href="#head"><span class="visually-hidden">Наверх</span></a>
       </div>
     </header>
     <main>
@@ -54,8 +59,8 @@
           <form class="banner__form" action="index.html" method="post">
             <div class="banner__border">
               <h3 class="banner__title">Узнайте подробнее о бальзаме</h3>
-              <input class="banner__input" type="text" name="" value="" placeholder="Имя">
-              <input class="banner__input" type="tel" name="" value="" placeholder="Телефон">
+              <input class="banner__input" type="text" name="banner-name" value="" placeholder="Имя">
+              <input class="banner__input" type="tel" name="banner-phone" value="" placeholder="Телефон">
               <button class="banner__buttom btn" type="submit" name="button"><span class="btn__span">Узнать</span></button>
             </div>
           </form>
@@ -91,27 +96,27 @@
             <fieldset class="catalog__field catalog__field--head">
               <ul class="catalog__list">
                 <li class="catalog__item">
-                  <input class="catalog__check" type="checkbox" name="01" value="" id="01">
+                  <input class="catalog__check" type="checkbox" name="catalog-01" value="" id="01">
                   <span class="catalog__span">01.</span>
                   <label class="catalog__label" for="01">Сниженный тонус, не хватает  энергии</label>
                 </li>
                 <li class="catalog__item">
-                  <input class="catalog__check" type="checkbox" name="02" value="" id="02">
+                  <input class="catalog__check" type="checkbox" name="catalog-02" value="" id="02">
                   <span class="catalog__span">02.</span>
                   <label class="catalog__label" for="02">Прыщи, бородавки и растяжки</label>
                 </li>
                 <li class="catalog__item">
-                  <input class="catalog__check" type="checkbox" name="03" value="" id="03">
+                  <input class="catalog__check" type="checkbox" name="catalog-03" value="" id="03">
                   <span class="catalog__span">03.</span>
                   <label class="catalog__label" for="03">Слабая память и концентрация</label>
                 </li>
                 <li class="catalog__item">
-                  <input class="catalog__check" type="checkbox" name="" value="" id="04">
+                  <input class="catalog__check" type="checkbox" name="catalog-04" value="" id="04">
                   <span class="catalog__span">04.</span>
                   <label class="catalog__label" for="04">Болеете чаще раза в год?</label>
                 </li>
                 <li class="catalog__item">
-                  <input class="catalog__check" type="checkbox" name="" value="" id="05">
+                  <input class="catalog__check" type="checkbox" name="catalog-05" value="" id="05">
                   <span class="catalog__span">05.</span>
                   <label class="catalog__label" for="05">Головные боли</label>
                 </li>
@@ -120,22 +125,22 @@
             <fieldset class="catalog__field catalog__field--footer">
               <ul class="catalog__list catalog__list--footer">
                 <li class="catalog__item catalog__item--footer">
-                  <input class="catalog__check" type="checkbox" name="" value="" id="06">
+                  <input class="catalog__check" type="checkbox" name="catalog-06" value="" id="06">
                   <span class="catalog__span">06.</span>
                   <label class="catalog__label catalog__label--footer" for="06">Синяки, шишки, ожоги, порезы долго не проходят </label>
                 </li>
                 <li class="catalog__item catalog__item--footer">
-                  <input class="catalog__check" type="checkbox" name="" value="" id="07">
+                  <input class="catalog__check" type="checkbox" name="catalog-07" value="" id="07">
                   <span class="catalog__span">07.</span>
                   <label class="catalog__label catalog__label--footer" for="07">Плохо засыпаете и часто просыпаетесь</label>
                 </li>
                 <li class="catalog__item catalog__item--footer">
-                  <input class="catalog__check" type="checkbox" name="" value="" id="08">
+                  <input class="catalog__check" type="checkbox" name="catalog-08" value="" id="08">
                   <span class="catalog__span">08.</span>
                   <label class="catalog__label catalog__label--footer" for="08">Проблемы с желудком</label>
                 </li>
                 <li class="catalog__item catalog__item--footer">
-                  <input class="catalog__check" type="checkbox" name="" value="" id="09">
+                  <input class="catalog__check" type="checkbox" name="catalog-09" value="" id="09">
                   <span class="catalog__span">09.</span>
                   <label class="catalog__label catalog__label--footer" for="09">Стресс</label>
                 </li>
@@ -214,7 +219,7 @@
               </div>
               <form class="stories__form" action="index.html" method="post">
                 <p class="stories__paragraph stories__paragraph--form">Оставьте свою почту и получайте рецепты молодости и здоровья каждую неделю</p>
-                <input class="stories__input" type="email" name="" value="" placeholder="E-mail">
+                <input class="stories__input" type="email" name="stories-email" value="" placeholder="E-mail">
                 <button class="stories__btn btn" type="submit" name="button">оставить почту</button>
               </form>
             </div>
@@ -233,21 +238,21 @@
             <div class="profit__item">
               <span class="profit__title">01</span>
               <p class="profit__paragraph">сбор трав</p>
-              <object class="profit__pic profit__pic--herb" type="image/svg+xml" data="icon-herb.svg">
+              <object class="profit__pic profit__pic--herb" type="image/svg+xml" data="img/icon-herb.svg">
                 <img class="porfit__img porfit__img--herb" src="img/icon-herb.svg" width="85" height="85" alt="Иконка ступы с травами">
               </object>
             </div>
             <div class="profit__item">
               <span class="profit__title">02</span>
               <p class="profit__paragraph">инструкция по применению</p>
-              <object class="profit__pic profit__pic--book" type="image/svg+xml" data="icon-book.svg">
+              <object class="profit__pic profit__pic--book" type="image/svg+xml" data="img/icon-book.svg">
                 <img class="porfit__img porfit__img--book" src="img/icon-book.svg" width="97" height="70" alt="Иконка раскрытой книги">
               </object>
             </div>
             <div class="profit__item">
               <span class="profit__title">03</span>
               <p class="profit__paragraph">сертификат качества</p>
-              <object class="profit__pic profit__pic--certificate" type="image/svg+xml" data="icon-certificate.svg">
+              <object class="profit__pic profit__pic--certificate" type="image/svg+xml" data="img/icon-certificate.svg">
                 <img class="porfit__img porfit__img--certificate" src="img/icon-certificate.svg" width="82" height="70" alt="Иконка сертификата">
               </object>
             </div>
@@ -358,7 +363,6 @@
       </section>
       <section class="comment">
         <div class="comment__wrap wrap">
-          <a class="visually-hidden" name="comment"></a>
           <h2 class="comment__head">Отзывы о «Шведской горечи»</h2>
           <div class="comment__inner">
             <button class="comment__button comment__button--ru comment__button--enable" type="button" name="button">от российскийх потребителей</button>
@@ -456,6 +460,7 @@
     <footer>
       <section class="info">
         <div class="info__wrap wrap">
+          <h2 class="visually-hidden">Правовая информация</h2>
           <ul class="info__list">
             <li class="info__item info__item--logo">
               <a class="info__link info__link--logo" href="#">
@@ -466,27 +471,28 @@
                 </picture>
               </a>
             </li>
-            <ul class="info__catalog">
-              <li class="info__point">
-                <a class="info__link info__link--text" href="#">Политика конфиденциальности</a>
-              </li>
-              <li class="info__point">
-                <a class="info__link  info__link--text" href="#">Отказ от ответственности</a>
-              </li>
-              <li class="info__point">
-                <a class="info__link  info__link--text" href="#">Согласие с рассылкой</a>
-              </li>
-            </ul>
+            <li class="info__item">
+              <ul class="info__catalog">
+                <li class="info__point">
+                  <a class="info__link info__link--text" href="#">Политика конфиденциальности</a>
+                </li>
+                <li class="info__point">
+                  <a class="info__link  info__link--text" href="#">Отказ от ответственности</a>
+                </li>
+                <li class="info__point">
+                  <a class="info__link  info__link--text" href="#">Согласие с рассылкой</a>
+                </li>
+              </ul>
+            </li>
             <li class="info__item info__item--phone">
-              <a class="info__link info__link--phone" href="tel:8800 000-00-00">8800 000-00-00</a>
+              <a class="info__link info__link--phone" href="tel:8800-000-00-00">8800 000-00-00</a>
               <span class="info__span info__span--phone">Звонок бесплатный</span>
             </li>
           </ul>
-
         </div>
       </section>
     </footer>
-    <script src="js/commentButton.js">
-    </script>
+    <script src="js/commentButton.js"></script>
+    <script src="js/up-btn.js"></script>
   </body>
 </html>
