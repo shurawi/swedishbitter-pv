@@ -6,6 +6,7 @@ let commentButtonRu = document.querySelector('.comment__button--ru');
 let commentButtonEn = document.querySelector('.comment__button--en');
 let bannerButtom = document.querySelector('.banner__buttom');
 let storiesBtn = document.querySelector('.stories__btn');
+let commentLinks = document.querySelectorAll('.comment__link');
 
 commentButtonRu.addEventListener ('click', function() {
   commentButtonRu.classList.remove('comment__button--disable');
@@ -32,3 +33,9 @@ bannerButtom.addEventListener('click', function (evt) {
 storiesBtn.addEventListener('click', function (evt) {
   evt.preventDefault();
 })
+
+for (let commentLink of commentLinks) {
+  commentLink.addEventListener('click', function (evt) {
+    evt.preventDefault();
+  })
+}
